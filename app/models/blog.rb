@@ -1,4 +1,4 @@
-class Blog < ApplicationRecor
+class Blog < ApplicationRecord
 
 # Create enum to toggle post status
   enum status: { draft: 0, published: 1 }
@@ -9,5 +9,8 @@ class Blog < ApplicationRecor
 
 # Validations
   validates_presence_of :title, :body
+
+  # Relation ships
+  belongs_to :topic
 
 end
