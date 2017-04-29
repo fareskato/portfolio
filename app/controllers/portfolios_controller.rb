@@ -2,6 +2,10 @@ class PortfoliosController < ApplicationController
   ########## ALL PORTFOLIOS ##########
   def index
     @portfolio_items = Portfolio.all
+    # using ruby_on_rails_items scope
+    # @portfolio_items = Portfolio.ruby_on_rails_items
+    # using angular scope
+    # @portfolio_items = Portfolio.angular
   end
 
   ########## CREATE PORTFOLIO (new , create) ##########

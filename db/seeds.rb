@@ -7,11 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+#  CREATE SEED FOR TOPIC
+3.times do |topic|
+  Topic.create!(
+      title: "Topic #{topic}"
+    )
+end
+puts '3 topics created'
+
 #  CREATE SEED FOR BLOG
 10.times do |blog|
   Blog.create!(
     title: "My blog post #{blog}",
-    body: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+    body: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    topic_id: Topic.last.id
   )
 end
 
@@ -28,10 +37,20 @@ end
 puts '5 skills created'
 
 #  CREATE SEED FOR PORTFOLIO
-9.times do |portfolio|
+8.times do |portfolio|
   Portfolio.create!(
     title: "Portfolio title #{portfolio}",
-    subtitle: 'This is subtitle',
+    subtitle: 'Ruby on rails',
+    body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout' ,
+    main_image: "http://placehold.it/600x400" ,
+    thumb_image: "http://placehold.it/350x200"
+  )
+end
+
+1.times do |portfolio|
+  Portfolio.create!(
+    title: "Portfolio title #{portfolio}",
+    subtitle: 'Angular',
     body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout' ,
     main_image: "http://placehold.it/600x400" ,
     thumb_image: "http://placehold.it/350x200"
