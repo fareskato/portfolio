@@ -1,4 +1,4 @@
-class Blog < ApplicationRecord
+class Blog < ApplicationRecor
   
 # Create enum to toggle post status
   enum status: { draft: 0, published: 1 }
