@@ -9,7 +9,7 @@ include Placeholder
   after_initialize :set_defaults
   # use Placeholder concern
   def set_defaults
-  	self.main_image ||= Placeholder.image_generator(height:250, width:250)
+  	self.badge ||= Placeholder.image_generator(height:250, width:250)
   end
   
 

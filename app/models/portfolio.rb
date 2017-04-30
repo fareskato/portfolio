@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+# Relationship with technology
+  has_many :technologies
 #  invoke the concern
 	include Placeholder
 
