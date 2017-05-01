@@ -1,6 +1,14 @@
 class Portfolio < ApplicationRecord
 # Relationship with technology
   has_many :technologies
+
+=begin
+  Add nested attributes(technplogies) to Portfolio model
+=end
+# Nested attributes with validations for name
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda {|attrs| attrs['name'].blank?}
+
 #  invoke the concern
 	include Placeholder
 
