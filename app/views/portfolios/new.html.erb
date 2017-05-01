@@ -16,6 +16,17 @@
       <%= f.text_area :body %>
     </div>
 
+    <ul>
+    <!-- This part for nested attributes -->
+    <%= f.fields_for :technologies do |tec|  %>
+      <li>
+        <%= tec.label :name %>
+        <%= tec.text_field :name %>
+      </li>
+       <% end %>
+    </ul>
+   
+
     <div class="actions">
       <%= f.submit %>
     </div>
